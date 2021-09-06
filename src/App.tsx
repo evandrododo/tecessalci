@@ -20,7 +20,6 @@ import img18 from './quadrinhos/6.3+4.png'
 import img19 from './quadrinhos/7.1.png'
 import img20 from './quadrinhos/7.2.png'
 import img21 from './quadrinhos/7.3.png'
-import img22 from './quadrinhos/8.1+2.png'
 import img23 from './quadrinhos/8.3.png'
 import img24 from './quadrinhos/8.4+5.png'
 import img25 from './quadrinhos/9.1.png'
@@ -89,110 +88,195 @@ import img87 from './quadrinhos/28.3.png'
 import img88 from './quadrinhos/29.1.png'
 import img89 from './quadrinhos/29.2.png'
 import img90 from './quadrinhos/29.3.png'
-import img91 from './quadrinhos/29.4.png'
 import img92 from './quadrinhos/29.5.png'
 import img93 from './quadrinhos/29.6.png'
 import img94 from './quadrinhos/quadro final.png'
+import Secao from './Secao';
+import { SecaoContextProvider } from './SecaoContext';
 
 function App() {
+
   return (
-    <div className="app">
-    <div className="quadrinhos-container">
-      <img src={img1} alt='1.1'/>
-      <img src={img2} alt='1.2'/>
-      <img src={img3} alt='1.4'/>
-      <img src={img4} alt='2.1'/>
-      <img src={img5} alt='2.3'/>
-      <img src={img6} alt='2.5'/>
-      <img src={img7} alt='3.1+2+3'/>
-      <img src={img8} alt='3.4+5'/>
-      <img src={img9} alt='3.6+7'/>
-      <img src={img10} alt='4.1'/>
-      <img src={img11} alt='4.2+3'/>
-      <img src={img12} alt='4.4+5'/>
-      <img src={img13} alt='5.1'/>
-      <img src={img14} alt='5.2'/>
-      <img src={img15} alt='5.3'/>
-      <img src={img16} alt='6.1'/>
-      <img src={img17} alt='6.2'/>
-      <img src={img18} alt='6.3+4'/>
-      <img src={img19} alt='7.1'/>
-      <img src={img20} alt='7.2'/>
-      <img src={img21} alt='7.3'/>
-      <img src={img22} alt='8.1+2'/>
-      <img src={img23} alt='8.3'/>
-      <img src={img24} alt='8.4+5'/>
-      <img src={img25} alt='9.1'/>
-      <img src={img26} alt='9.2'/>
-      <img src={img27} alt='9.3'/>
-      <img src={img28} alt='10.1'/>
-      <img src={img29} alt='10.2'/>
-      <img src={img30} alt='10.3'/>
-      <img src={img31} alt='11.1+2'/>
-      <img src={img32} alt='11.3'/>
-      <img src={img33} alt='11.4+5'/>
-      <img src={img34} alt='12.1'/>
-      <img src={img35} alt='12.2'/>
-      <img src={img36} alt='12.3'/>
-      <img src={img37} alt='12.4'/>
-      <img src={img38} alt='13.1'/>
-      <img src={img39} alt='13.2'/>
-      <img src={img40} alt='13.3'/>
-      <img src={img41} alt='13.4'/>
-      <img src={img42} alt='14.1'/>
-      <img src={img43} alt='14.2'/>
-      <img src={img44} alt='14.3'/>
-      <img src={img45} alt='15.1'/>
-      <img src={img46} alt='15.2'/>
-      <img src={img47} alt='15.3'/>
-      <img src={img48} alt='15.4'/>
-      <img src={img49} alt='16.1'/>
-      <img src={img50} alt='16.2'/>
-      <img src={img51} alt='16.3'/>
-      <img src={img52} alt='17.1'/>
-      <img src={img53} alt='17.2'/>
-      <img src={img54} alt='17.3'/>
-      <img src={img55} alt='17.4'/>
-      <img src={img56} alt='18.1'/>
-      <img src={img57} alt='18.2'/>
-      <img src={img58} alt='18.3'/>
-      <img src={img59} alt='19.1'/>
-      <img src={img60} alt='19.2'/>
-      <img src={img61} alt='19.3'/>
-      <img src={img62} alt='20.1'/>
-      <img src={img63} alt='20.2'/>
-      <img src={img64} alt='20.3'/>
-      <img src={img65} alt='21.1'/>
-      <img src={img66} alt='21.2'/>
-      <img src={img67} alt='21.3'/>
-      <img src={img68} alt='22'/>
-      <img src={img69} alt='23.1'/>
-      <img src={img70} alt='23.2'/>
-      <img src={img71} alt='23.3'/>
-      <img src={img72} alt='24.1'/>
-      <img src={img73} alt='24.2'/>
-      <img src={img74} alt='24.3'/>
-      <img src={img75} alt='25.1'/>
-      <img src={img76} alt='25.2'/>
-      <img src={img77} alt='25.3'/>
-      <img src={img78} alt='26.1'/>
-      <img src={img79} alt='26.2'/>
-      <img src={img80} alt='26.3'/>
-      <img src={img81} alt='27.1'/>
-      <img src={img82} alt='27.2+3'/>
-      <img src={img83} alt='27.4'/>
-      <img src={img84} alt='27.5'/>
-      <img src={img85} alt='28.1'/>
-      <img src={img86} alt='28.2'/>
-      <img src={img87} alt='28.3'/>
-      <img src={img88} alt='29.1'/>
-      <img src={img89} alt='29.2'/>
-      <img src={img90} alt='29.3'/>
-      <img src={img91} alt='29.4'/>
-      <img src={img92} alt='29.5'/>
-      <img src={img93} alt='29.6'/>
-      <img src={img94} alt='final'/>
-    </div>
+    <div className='app'>
+      <div className='quadrinhos-container'>
+        <SecaoContextProvider>
+          <Secao index={1}>
+            <img src={img1} alt='1.1' />
+          </Secao>
+          <Secao index={2}>
+            <img src={img2} alt='1.2' />
+            <img src={img3} alt='1.4' />
+            <img src={img4} alt='2.1' />
+          </Secao>
+          <Secao index={3}>
+            <img src={img5} alt='2.3' />
+            <img src={img6} alt='2.5' />
+            <img src={img7} alt='3.1+2+3' />
+          </Secao>
+          <Secao index={4}>
+            <img src={img8} alt='3.4+5' />
+            <img src={img9} alt='3.6+7' />
+            <img src={img10} alt='4.1' />
+          </Secao>
+          <Secao index={5}>
+            <img src={img11} alt='4.2+3' />
+            <img src={img12} alt='4.4+5' />
+            <img src={img13} alt='5.1' />
+          </Secao>
+          <Secao index={6}>
+            <img src={img14} alt='5.2' />
+            <img src={img15} alt='5.3' />
+            <img src={img16} alt='6.1' />
+          </Secao>
+          <Secao index={7}>
+            <img src={img17} alt='6.2' />
+            <img src={img18} alt='6.3+4' />
+            <img src={img19} alt='7.1' />
+          </Secao>
+          <Secao index={8}>
+            <img src={img20} alt='7.2' />
+            <img src={img21} alt='7.3' />
+            <img src={img23} alt='8.3' />
+          </Secao>
+          <Secao index={9}>
+            <img src={img24} alt='8.4+5' />
+            <img src={img25} alt='9.1' />
+            <img src={img26} alt='9.2' />
+          </Secao>
+          <Secao index={10}>
+            <img src={img27} alt='9.3' />
+            <img src={img28} alt='10.1' />
+            <img src={img29} alt='10.2' />
+          </Secao>
+          <Secao index={11}>
+            <img src={img30} alt='10.3' />
+            <img src={img31} alt='11.1+2' />
+            <img src={img32} alt='11.3' />
+            <img src={img33} alt='11.4+5' />
+          </Secao>
+          <Secao index={12}>
+            <img src={img34} alt='12.1' />
+            <img src={img35} alt='12.2' />
+            <img src={img36} alt='12.3' />
+          </Secao>
+          <Secao index={13}>
+            <img src={img37} alt='12.4' />
+            <img src={img38} alt='13.1' />
+            <img src={img39} alt='13.2' />
+          </Secao>
+          <Secao index={14}>
+            <img src={img40} alt='13.3' />
+            <img src={img41} alt='13.4' />
+            <img src={img42} alt='14.1' />
+          </Secao>
+          <Secao index={15}>
+            <img src={img43} alt='14.2' />
+            <img src={img44} alt='14.3' />
+            <img src={img45} alt='15.1' />
+          </Secao>
+          <Secao index={16}>
+            <img src={img46} alt='15.2' />
+            <img src={img47} alt='15.3' />
+            <img src={img48} alt='15.4' />
+          </Secao>
+          <Secao index={17}>
+            <img src={img49} alt='16.1' />
+            <img src={img50} alt='16.2' />
+            <img src={img51} alt='16.3' />
+          </Secao>
+          <Secao index={18}>
+            <img src={img52} alt='17.1' />
+            <img src={img53} alt='17.2' />
+            <img src={img54} alt='17.3' />
+          </Secao>
+          <Secao index={19}>
+            <img src={img55} alt='17.4' />
+            <img src={img56} alt='18.1' />
+            <img src={img57} alt='18.2' />
+          </Secao>
+          <Secao index={20}>
+            <img src={img58} alt='18.3' />
+            <img src={img59} alt='19.1' />
+            <img src={img60} alt='19.2' />
+          </Secao>
+          <Secao index={21}>
+            <img src={img61} alt='19.3' />
+            <img src={img62} alt='20.1' />
+            <img src={img63} alt='20.2' />
+          </Secao>
+          <Secao index={22}>
+            <img src={img64} alt='20.3' />
+            <img src={img65} alt='21.1' />
+            <img src={img66} alt='21.2' />
+          </Secao>
+          <Secao index={23}>
+            <img src={img67} alt='21.3' />
+            <img src={img68} alt='22' />
+            <img src={img69} alt='23.1' />
+          </Secao>
+          <Secao index={24}>
+            <img src={img70} alt='23.2' />
+            <img src={img71} alt='23.3' />
+            <img src={img72} alt='24.1' />
+          </Secao>
+          <Secao index={25}>
+            <img src={img73} alt='24.2' />
+            <img src={img74} alt='24.3' />
+            <img src={img75} alt='25.1' />
+          </Secao>
+          <Secao index={26}>
+            <img src={img76} alt='25.2' />
+            <img src={img77} alt='25.3' />
+            <img src={img78} alt='26.1' />
+          </Secao>
+          <Secao index={27}>
+            <img src={img79} alt='26.2' />
+            <img src={img80} alt='26.3' />
+            <img src={img81} alt='27.1' />
+          </Secao>
+          <Secao index={28}>
+            <img src={img82} alt='27.2+3' />
+            <img src={img83} alt='27.4' />
+            <img src={img84} alt='27.5' />
+          </Secao>
+          <Secao index={29}>
+            <img src={img85} alt='28.1' />
+            <img src={img86} alt='28.2' />
+            <img src={img87} alt='28.3' />
+          </Secao>
+          <Secao index={30}>
+            <img src={img88} alt='29.1' />
+            <img src={img89} alt='29.2' />
+            <img src={img90} alt='29.3' />
+          </Secao>
+          <Secao index={31}>
+            <img src={img92} alt='29.5' />
+            <img src={img93} alt='29.6' />
+            <img src={img94} alt='final' />
+          </Secao>
+          
+          <Secao index={32}>
+            <h1>Créditos</h1>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <h2>Salci como salci</h2>
+            <h2>Estrelando salci</h2>
+            <div style={{ height: 100}}></div>
+          </Secao>
+        </SecaoContextProvider>
+      </div>
     </div>
   );
 }

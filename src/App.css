@@ -6,13 +6,43 @@
 .quadrinhos-container {
   background-color: #fff;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.quadrinhos-container img {
   max-width: 1000px;
 }
 
-.quadrinhos-container img {
-  max-width: 100%;
+.secao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
 }
 
+.botaoonda {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.botaoonda img {
+  position: absolute;
+  width: 100%;
+  max-width: none;
+  bottom: -50px;
+  left: 0;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
