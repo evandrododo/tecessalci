@@ -10,6 +10,9 @@ const Secao = ({ index = 99, children, style }: any) => {
     ...style,
     backgroundColor: `rgb(${whiteBg},${whiteBg},${whiteBg})`
   }
+
+  // aumenta altura minima quando 
+  // ta só na primeira secao
   if (secaoAtiva === 1) {
     styleWithBg = {
       ...styleWithBg,
@@ -21,9 +24,19 @@ const Secao = ({ index = 99, children, style }: any) => {
     setProximaSecaoAtiva()
   }
 
-  if (secaoAtiva < index) {
+
+  if (secaoAtiva < index - 1) {
     return <>
     </> 
+  }
+
+  // carrega mas esconde o conteúdo que vai 
+  // ser lido em seguida
+  if (secaoAtiva === index - 1) {
+    styleWithBg = {
+      ...styleWithBg,
+      display: 'none'
+    }
   }
 
   return (

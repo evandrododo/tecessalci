@@ -87,7 +87,6 @@ import img86 from './quadrinhos/28.2.png'
 import img87 from './quadrinhos/28.3.png'
 import img88 from './quadrinhos/29.1.png'
 import img89 from './quadrinhos/29.2.png'
-import img90 from './quadrinhos/29.3.png'
 import img92 from './quadrinhos/29.5.png'
 import img93 from './quadrinhos/29.6.png'
 import img94 from './quadrinhos/quadro final.png'
@@ -247,7 +246,6 @@ function App() {
           <Secao index={30}>
             <img src={img88} alt='29.1' />
             <img src={img89} alt='29.2' />
-            <img src={img90} alt='29.3' />
           </Secao>
           <Secao index={31}>
             <img src={img92} alt='29.5' />

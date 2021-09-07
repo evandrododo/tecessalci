@@ -14,7 +14,7 @@
 
 
 .quadrinhos-container img {
-  max-width: 1000px;
+  max-width: 100%;
 }
 
 .secao {
@@ -40,7 +40,7 @@
   position: absolute;
   width: 100%;
   max-width: none;
-  bottom: -50px;
+  bottom: 0px;
   left: 0;
 }
 @media (prefers-reduced-motion: no-preference) {
