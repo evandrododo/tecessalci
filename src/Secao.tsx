@@ -1,14 +1,27 @@
 import { useContext } from "react";
 import { SecaoContext } from "./SecaoContext";
-import ondacarregar from './img/ondacarregar.gif'
+import ondacarregar from './assets/img/ondacarregar.gif'
+
+const getBackgroundColor = (index: number) => {
+  const redStart = 252
+  const redEnd = 93
+  const greenStart = 255
+  const greenEnd = 32
+  const blueStart = 221
+  const blueEnd = 138
+  const totalSections = 32
+  const redBg = redStart + index * ((redEnd - redStart)/totalSections)
+  const greenBg = greenStart + index * ((greenEnd - greenStart)/totalSections)
+  const blueBg = blueStart + index * ((blueEnd - blueStart)/totalSections)
+
+  return `rgb(${redBg},${greenBg},${blueBg})`
+}
 
 const Secao = ({ index = 99, children, style }: any) => {
   const { setProximaSecaoAtiva , secaoAtiva} = useContext(SecaoContext);
-
-  const whiteBg = 255 - index * 8 // 8 = 256 / 32 (total seções)
   let styleWithBg = {
     ...style,
-    backgroundColor: `rgb(${whiteBg},${whiteBg},${whiteBg})`
+    backgroundColor: getBackgroundColor(index)
   }
 
   // aumenta altura minima quando 
