@@ -56,13 +56,13 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
       if (secaoAtiva > 9) {
         stopRonco();
       }
-      if (secaoAtiva === 27) {
+      if (secaoAtiva === 25) {
         playTempestade();
       }
-      if (secaoAtiva > 27) {
+      if (secaoAtiva > 25) {
         stopToyBox();
       }
-      if (secaoAtiva === 32) {
+      if (secaoAtiva === 33) {
         playOndas();
       }
       if (secaoAtiva > 32) {

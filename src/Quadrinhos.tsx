@@ -127,7 +127,7 @@ const Quadrinhos = () => {
           style={{
             display: 'flex',
             transition: '2s 1s ease-in-out height, 1s 1s linear opacity',
-            height: secaoAtiva === 0 ? '100vh' : '300px',
+            height: secaoAtiva === 0 ? '100vh' : '100px',
             opacity: secaoAtiva === 0 ? '1' : '0',
           }}
         >
@@ -181,12 +181,13 @@ const Quadrinhos = () => {
         <img src={img25} alt='9.1' />
         <img src={img26} alt='9.2' />
       </Secao>
-      <Secao index={12}>
+      <Secao index={11}>
         <img src={img27} alt='9.3' />
         <img src={img28} alt='10.1' />
         <img src={img29} alt='10.2' />
       </Secao>
       <Secao index={12}>
+        <img src={nuvemdia} className='intergif' alt='nuvemanimada' />
         <img src={img30} alt='10.3' />
         <img src={img31} alt='11.1+2' />
         <img src={img32} alt='11.3' />
