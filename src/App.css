@@ -3,6 +3,14 @@
   align-items: center;
   justify-content: center;
 }
+
+* {
+  transition: 0.3s ease-in-out all;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
 .quadrinhos-container {
   background-color: #fff;
   text-align: center;
@@ -10,11 +18,45 @@
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  position: relative;
 }
 
 
 .quadrinhos-container img {
   max-width: 100%;
+}
+
+.creditos {
+  background-color: black;
+  padding: 15em 0 50vw;
+  width: 100%;
+}
+
+.creditos h2 {
+  margin-top: 5em;
+  margin-bottom: 0.4em;
+}
+.creditos h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.playsom {
+  position: fixed;
+  z-index: 10;
+  top: 2em;
+  left: 2em;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.playsom:hover {
+  opacity: 1;
+}
+.playsom img {
+  max-width: 32px;
+}
+.playsom span {
+  color: #888;
 }
 
 .secao {
