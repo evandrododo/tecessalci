@@ -158,3 +158,34 @@
   position: absolute;
   width: 100%;
 }
+
+.autoscroll {
+  position: fixed;
+  z-index: 10;
+  top: 6em;
+  left: 2em;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.autoscroll:hover {
+  opacity: 1;
+}
+.autoscroll img {
+  max-width: 42px;
+}
+.autoscroll button {
+  background-color: transparent;
+  border: none;
+  color: #888;
+}
+.autoscroll span {
+  color: #888;
+  opacity: 0;
+  height: 0;
+  font-size: 1.1em;
+}
+
+.autoscroll:hover span {
+  opacity: 1;
+  height: auto;
+}

@@ -100,6 +100,7 @@ import ondacarregar from './assets/img/ondacarregar.gif'
 import nuvemdia from './assets/img/nuvemdia.gif'
 import nuvemnoite from './assets/img/nuvemnoite.gif'
 import SomAmbiente from './SomAmbiente'
+import AutoScroll from './AutoScroll'
 
 const Quadrinhos = () => {
   const { secaoAtiva, setProximaSecaoAtiva } = useContext(SecaoContext);
@@ -122,6 +123,7 @@ const Quadrinhos = () => {
         somHabilitado={somHabilitado}
         setSomHabilitado={setSomHabilitado}
       />
+      <AutoScroll />
       <Secao index={0}>
         <div
           style={{
@@ -206,14 +208,14 @@ const Quadrinhos = () => {
       <Secao index={15}>
         <img src={img40} alt='13.3' />
         <img src={img41} alt='13.4' />
-        <img src={img42} alt='14.1' />
-        <img src={img43} alt='14.2' />
       </Secao>
       <Secao index={16}>
+        <img src={img42} alt='14.1' />
+        <img src={img43} alt='14.2' />
         <img src={img44} alt='14.3' />
-        <img src={img45} alt='15.1' />
       </Secao>
       <Secao index={17}>
+        <img src={img45} alt='15.1' />
         <img src={img46} alt='15.2' />
         <img src={img47} alt='15.3' />
         <img src={img48} alt='15.4' />
