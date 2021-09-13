@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, useEffect } from 'react';
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import useSound from 'use-sound';
 import audioon from './assets/img/audioon.png'
 import audiooff from './assets/img/audiooff.png'
@@ -9,6 +9,9 @@ import ronco from './assets/audio/4_ronco.mp3'
 import toybox from './assets/audio/5_toybox.mp3'
 import tempestade from './assets/audio/6_tempestade.mp3'
 import ondas from './assets/audio/7_ondas.mp3'
+import toctoc from './assets/audio/toctoc.mp3'
+import caverna from './assets/audio/caverna.mp3'
+import cobra from './assets/audio/cobra.mp3'
 import { SecaoContext } from './SecaoContext';
 
 interface SomAmbienteProps {
@@ -25,6 +28,15 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
   const [playToyBox, { stop: stopToyBox }] = useSound(toybox, { soundEnabled: somHabilitado });
   const [playTempestade, { stop: stopTempestade }] = useSound(tempestade, { soundEnabled: somHabilitado });
   const [playOndas, { stop: stopOndas } ] = useSound(ondas, { soundEnabled: somHabilitado });
+  const [playToctoc, { stop: stopToctoc } ] = useSound(toctoc, { soundEnabled: somHabilitado });
+  const [playCaverna, { stop: stopCaverna } ] = useSound(caverna, { soundEnabled: somHabilitado });
+  const [playbackCobra, setPlaybackCobra] = useState(1);
+  const [volumeCobra, setVolumeCobra] = useState(1);
+  const [playCobra, { stop: stopCobra }] = useSound(cobra, {
+    soundEnabled: somHabilitado,
+    playbackRate: playbackCobra,
+    volume: volumeCobra,
+  });
 
   useEffect(() => {
     console.log('somHabilitado', somHabilitado);
@@ -56,17 +68,31 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
       if (secaoAtiva > 9) {
         stopRonco();
       }
+      if (secaoAtiva === 16) {
+        stopToyBox();
+        playToctoc();
+        playCaverna();
+      }
+      if (secaoAtiva > 16) {
+        stopToctoc();
+      }
       if (secaoAtiva === 25) {
+        playCobra();
         playTempestade();
       }
-      if (secaoAtiva > 25) {
-        stopToyBox();
+      if (secaoAtiva === 26) {
+        stopCobra();
+        stopCaverna();
+        setPlaybackCobra(1.2);
+        setVolumeCobra(0.5);
+        playCobra();
+      }
+      if (secaoAtiva === 27) {
+        stopCobra();
       }
       if (secaoAtiva === 33) {
-        playOndas();
-      }
-      if (secaoAtiva > 32) {
         stopTempestade();
+        playOndas();
       }
     }
     if (!somHabilitado) {
@@ -95,6 +121,12 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
     playOndas,
     stopTempestade,
     stopOndas,
+    playToctoc,
+    stopToctoc,
+    playCaverna,
+    playCobra,
+    stopCaverna,
+    stopCobra,
   ]);
 
   return (

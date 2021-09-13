@@ -207,9 +207,9 @@ const Quadrinhos = () => {
         <img src={img40} alt='13.3' />
         <img src={img41} alt='13.4' />
         <img src={img42} alt='14.1' />
+        <img src={img43} alt='14.2' />
       </Secao>
       <Secao index={16}>
-        <img src={img43} alt='14.2' />
         <img src={img44} alt='14.3' />
         <img src={img45} alt='15.1' />
       </Secao>
