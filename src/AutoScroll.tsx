@@ -26,6 +26,7 @@ const AutoScroll = () => {
     } else {
       setScrolling(null)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [velocity]);
 
   return (
