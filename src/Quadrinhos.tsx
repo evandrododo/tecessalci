@@ -97,6 +97,8 @@ import Secao from './Secao';
 import { useContext, useState } from 'react'
 import { SecaoContext } from './SecaoContext'
 import ondacarregar from './assets/img/ondacarregar.gif'
+import nuvemdia from './assets/img/nuvemdia.gif'
+import nuvemnoite from './assets/img/nuvemnoite.gif'
 import SomAmbiente from './SomAmbiente'
 
 const Quadrinhos = () => {
@@ -151,6 +153,7 @@ const Quadrinhos = () => {
         <img src={img10} alt='4.1' />
       </Secao>
       <Secao index={5}>
+        <img src={nuvemdia} className='intergif' alt='nuvemanimada' />
         <img src={img11} alt='4.2+3' />
         <img src={img12} alt='4.4+5' />
         <img src={img13} alt='5.1' />
@@ -260,6 +263,7 @@ const Quadrinhos = () => {
         <img src={img75} alt='25.1' />
       </Secao>
       <Secao index={27}>
+        <img src={nuvemnoite} className='intergif' alt='nuvemanimada' />
         <img src={img76} alt='25.2' />
         <img src={img77} alt='25.3' />
         <img src={img78} alt='26.1' />
@@ -309,10 +313,7 @@ const Quadrinhos = () => {
           <h3>Bernardo Correa</h3>
         </div>
       </Secao>
-      <button
-        id='botaoonda'
-        onClick={() => handleMudaSecao()}
-      >
+      <button id='botaoonda' onClick={() => handleMudaSecao()}>
         <img src={ondacarregar} alt='carregar próximo' />
         {secaoAtiva < 1 && <span> Aperte para começar </span>}
       </button>

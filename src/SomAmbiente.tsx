@@ -50,7 +50,7 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
       if (secaoAtiva > 8) {
         stopCasa();
       }
-      if (secaoAtiva > 9 && secaoAtiva < 26) {
+      if (secaoAtiva === 9) {
         playToyBox();
       }
       if (secaoAtiva > 9) {
