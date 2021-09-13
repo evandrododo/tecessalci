@@ -91,10 +91,10 @@ import img90 from './quadrinhos/29.3.png'
 import img92 from './quadrinhos/29.5.png'
 import img93 from './quadrinhos/29.6.png'
 import img94 from './quadrinhos/quadro final.png'
-import titulo from './quadrinhos/titulo/tituloanimado.gif'
+import titulo from './assets/video/titulo.mp4'
 import Secao from './Secao';
 
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { SecaoContext } from './SecaoContext'
 import ondacarregar from './assets/img/ondacarregar.gif'
 import SomAmbiente from './SomAmbiente'
@@ -107,6 +107,10 @@ const Quadrinhos = () => {
     const proximaSecao = secaoAtiva + 1
     if (proximaSecao === 1) {
       setSomHabilitado(true)
+      const botaoonda = document.getElementById('botaoonda')
+      if (botaoonda !== null) {
+        botaoonda.className = 'carregou';
+      }
     }
     setProximaSecaoAtiva()
   }
@@ -117,13 +121,16 @@ const Quadrinhos = () => {
         setSomHabilitado={setSomHabilitado}
       />
       <Secao index={0}>
-        {secaoAtiva === 0 ? (
-          <div style={{ display: 'flex', minHeight: '100vh' }}>
-            <img src={titulo} alt='titulo' />
-          </div>
-        ) : (
-          <img src={titulo} alt='titulo' />
-        )}
+        <div
+          style={{
+            display: 'flex',
+            transition: '2s 1s ease-in-out height, 1s 1s linear opacity',
+            height: secaoAtiva === 0 ? '100vh' : '300px',
+            opacity: secaoAtiva === 0 ? '1' : '0',
+          }}
+        >
+          <video src={titulo} autoPlay loop muted />
+        </div>
       </Secao>
       <Secao index={1}>
         <img src={img1} alt='1.1' />
@@ -302,8 +309,12 @@ const Quadrinhos = () => {
           <h3>Bernardo Correa</h3>
         </div>
       </Secao>
-      <button className='botaoonda' onClick={() => handleMudaSecao()}>
+      <button
+        id='botaoonda'
+        onClick={() => handleMudaSecao()}
+      >
         <img src={ondacarregar} alt='carregar próximo' />
+        {secaoAtiva < 1 && <span> Aperte para começar </span>}
       </button>
     </div>
   );
