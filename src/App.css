@@ -90,7 +90,9 @@
 #botaoonda span {
   animation: pulse infinite 3s ease-in-out alternate;
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -4em;
   color: white
 }
 
