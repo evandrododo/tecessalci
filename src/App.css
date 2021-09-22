@@ -85,10 +85,13 @@
   position: absolute;
   width: 100%;
   max-width: none;
-  bottom: calc(50vh - 50vw);
   left: 0;
+  bottom: 0;
 }
-#botaoonda::before {
+#botaoonda.inicio img {
+  bottom: calc(50vh - 50vw);
+}
+#botaoonda.inicio::before {
   position: absolute;
   width: 100%;
   content: '';
@@ -106,6 +109,9 @@
   color: white
 }
 
+#botaoonda.carregou {
+  overflow: visible;
+}
 #botaoonda.carregou img {
   animation-name: onda;
   animation-duration: 3s;
@@ -142,7 +148,7 @@
 
 @keyframes pulseheight {
   0% {
-    height: 100vh;
+    height: 0vh;
   }
   50% {
     height: 200vh;
@@ -154,7 +160,7 @@
 
 @keyframes onda {
   0% {
-    padding-bottom: 100vh;
+    padding-bottom: 0vh;
   }
   50% {
     padding-bottom: 200vh;

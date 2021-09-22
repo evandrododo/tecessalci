@@ -112,7 +112,7 @@ const Quadrinhos = () => {
       setSomHabilitado(true)
       const botaoonda = document.getElementById('botaoonda')
       if (botaoonda !== null) {
-        botaoonda.className = 'carregou';
+        botaoonda.className += ' carregou';
       }
     }
     setProximaSecaoAtiva()
@@ -133,7 +133,7 @@ const Quadrinhos = () => {
             opacity: secaoAtiva === 0 ? '1' : '0',
           }}
         >
-          <video id='videotitulo' src={titulo} autoPlay loop muted/>
+          <video id='videotitulo' src={titulo} autoPlay loop muted />
         </div>
       </Secao>
       <Secao index={1}>
@@ -316,7 +316,11 @@ const Quadrinhos = () => {
           <h3>Bernardo Correa</h3>
         </div>
       </Secao>
-      <button id='botaoonda' onClick={() => handleMudaSecao()}>
+      <button
+        id='botaoonda'
+        onClick={() => handleMudaSecao()}
+        className={secaoAtiva < 1 ? 'inicio' : 'carregou'}
+      >
         <img src={ondacarregar} alt='carregar próximo' />
         {secaoAtiva < 2 && <span> Aperte para começar </span>}
       </button>
