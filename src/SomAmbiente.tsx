@@ -38,10 +38,32 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
     volume: volumeCobra,
   });
 
+  const videotitulo = document.getElementById('videotitulo') as HTMLVideoElement;
+  const [fadeOut, setFadeout] = useState<ReturnType<typeof setInterval> | null>(null);
+
   useEffect(() => {
-    console.log('somHabilitado', somHabilitado);
+    if (videotitulo) {
+      videotitulo.muted = !somHabilitado;
+      if (secaoAtiva > 0 && !fadeOut) {
+        const diminuiVolume = () => {
+          if (secaoAtiva < 1 || videotitulo.volume < 0.03) {
+            return
+          }
+          console.log('iminui volume', videotitulo.volume)
+          videotitulo.volume = videotitulo.volume -= 0.03;
+        }
+        setFadeout(setInterval(diminuiVolume, 150));
+        console.log('fadeout', fadeOut);
+      }
+      if (videotitulo.volume < 0.1 && fadeOut) {
+        clearInterval(fadeOut);
+      }
+      if (secaoAtiva === 2) {
+        videotitulo.muted = true;
+      }
+    }
     if (somHabilitado) {
-      if (secaoAtiva >= 1 && secaoAtiva <= 4) {
+      if (secaoAtiva === 1) {
         playInteriorCarro();
       }
       if (secaoAtiva > 4) {
@@ -127,6 +149,8 @@ const SomAmbiente = ({ somHabilitado, setSomHabilitado  }: SomAmbienteProps) => 
     playCobra,
     stopCaverna,
     stopCobra,
+    videotitulo,
+    fadeOut,
   ]);
 
   return (

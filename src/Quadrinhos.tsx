@@ -133,7 +133,7 @@ const Quadrinhos = () => {
             opacity: secaoAtiva === 0 ? '1' : '0',
           }}
         >
-          <video src={titulo} autoPlay loop muted />
+          <video id='videotitulo' src={titulo} autoPlay loop muted/>
         </div>
       </Secao>
       <Secao index={1}>
@@ -318,7 +318,7 @@ const Quadrinhos = () => {
       </Secao>
       <button id='botaoonda' onClick={() => handleMudaSecao()}>
         <img src={ondacarregar} alt='carregar próximo' />
-        {secaoAtiva < 1 && <span> Aperte para começar </span>}
+        {secaoAtiva < 2 && <span> Aperte para começar </span>}
       </button>
     </div>
   );
